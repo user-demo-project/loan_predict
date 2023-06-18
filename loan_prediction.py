@@ -189,7 +189,7 @@ if authentication_status:
             df_Occupation = pd.DataFrame(data_Occupation)
             st.table(df_Occupation)
         
-        col311,col312,col313= st.columns(3)
+        col311,col312= st.columns(2)
         with col311:
         
             st.write("Country")
@@ -198,11 +198,11 @@ if authentication_status:
         
             st.write("EmploymentDurationCurrentEmployer")
             st.text("MoreThan5Years,UpTo3Years,UpTo5Years,UpTo1Year,TrialPeriod,Retiree	Other")
+        
+        col313,col314,col315=st.columns(3) 
         with col313:
             st.write("Rating")
-            st.text("C,B,A,F,D,AA")
-        col314,col315=st.columns(2) 
-            
+            st.text("C,B,A,F,D,AA")    
         with col314:
             st.write("NewCreditCustomer")
             st.text("EE,ES,FI,SK")
