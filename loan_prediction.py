@@ -367,7 +367,7 @@ if authentication_status:
                                     axisline_opts=opts.AxisLineOpts(
                                     linestyle_opts=opts.LineStyleOpts(
                                     color=[[0.2, "#B9ABAA"],[0.8, "#F13626"], [1, "#F81D0B"]], width=20
-                                    ))detail_opts=opts.DetailOpts(textstyle_opts=opts.TextStyleOpts(color="#ffffff"))
+                                    ))
                                 ))
             st_pyecharts(c1)
     
