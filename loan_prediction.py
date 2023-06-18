@@ -364,7 +364,7 @@ if authentication_status:
                                 .add("", [("Probability", int(ans*100))], radius="80%")
                                 .set_global_opts(title_opts=opts.TitleOpts(title="Probability"))
                                 .set_series_opts(
-                                    axisline_opts=opts.AxisLineOpts(font_size=40, color="blue",
+                                    axisline_opts=opts.AxisLineOpts(
                                     linestyle_opts=opts.LineStyleOpts(
                                     color=[[0.2, "#B9ABAA"],[0.8, "#F13626"], [1, "#F81D0B"]], width=20
                                     ))))
