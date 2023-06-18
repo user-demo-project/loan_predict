@@ -251,61 +251,64 @@ if authentication_status:
         with st.expander("See Sample Input File"):
             st.table(df_sample)
         if st.button('Submit'):
-            
-            data = pd.read_excel(uploaded_file)
-            bool_data= data.select_dtypes('bool')
-            data = data.drop(bool_data.columns, axis=1)
-            features_bool_data= list(bool_data.columns)
-
-
-            filename = "bool_encoder.pkl"
-            with open(filename, 'rb') as file:
-                label_encoder = pickle.load(file)
-                
-
-            bool_data['NewCreditCustomer'] = label_encoder.transform(bool_data['NewCreditCustomer'])
-            bool_data['Restructured'] = label_encoder.transform(bool_data['Restructured'])
-            cat_data= data.select_dtypes('object')
-            data = data.drop(cat_data.columns, axis=1)
-            features_cat_data=list(cat_data.columns)
-
-            filename = "cat1_encoder.pkl"
-            with open(filename, 'rb') as file:
-                label_encoder_ = pickle.load(file)
-
-            transformed_data= label_encoder_.transform(cat_data)
-            tranformed_data=pd.DataFrame(transformed_data)
-            tranformed_data.columns=features_cat_data
-            object_data = pd.concat([tranformed_data,bool_data], axis=1)
-            object_data.shape
-
-            final_data=pd.concat([data,object_data], axis=1)
-            
-            filename=r"normalize_function.pkl"
-            with open(filename, 'rb') as file:
-                normalization_function = pickle.load(file)
-
-            data = pd.DataFrame(normalization_function.transform(final_data))
-
-            data.columns=final_data.columns
-            data=data.fillna(0)
-            
-            filename=r"model_final.pkl"
-            with open(filename, 'rb') as file:
-                prediction = pickle.load(file)
-            probability=prediction.predict(data)
-            print(round(probability[0],2),"hjhjh")
-            ans=round(probability[0],2)
-            print(type(int(ans)),ans)
-            c1=(Gauge()
-                                .add("", [("Probability", int(ans*100))], radius="80%")
-                                .set_global_opts(title_opts=opts.TitleOpts(title="Probability"))
-                                .set_series_opts(
-                                    axisline_opts=opts.AxisLineOpts(
-                                    linestyle_opts=opts.LineStyleOpts(
-                                    color=[[0.2, "#B9ABAA"],[0.8, "#F13626"], [1, "#F81D0B"]], width=20
-                                    ))))
-            st_pyecharts(c1)
+            if uploaded_file is None:
+               st.warning("Please upload file")
+            else:
+               
+               data = pd.read_excel(uploaded_file)
+               bool_data= data.select_dtypes('bool')
+               data = data.drop(bool_data.columns, axis=1)
+               features_bool_data= list(bool_data.columns)
+   
+   
+               filename = "bool_encoder.pkl"
+               with open(filename, 'rb') as file:
+                   label_encoder = pickle.load(file)
+                   
+   
+               bool_data['NewCreditCustomer'] = label_encoder.transform(bool_data['NewCreditCustomer'])
+               bool_data['Restructured'] = label_encoder.transform(bool_data['Restructured'])
+               cat_data= data.select_dtypes('object')
+               data = data.drop(cat_data.columns, axis=1)
+               features_cat_data=list(cat_data.columns)
+   
+               filename = "cat1_encoder.pkl"
+               with open(filename, 'rb') as file:
+                   label_encoder_ = pickle.load(file)
+   
+               transformed_data= label_encoder_.transform(cat_data)
+               tranformed_data=pd.DataFrame(transformed_data)
+               tranformed_data.columns=features_cat_data
+               object_data = pd.concat([tranformed_data,bool_data], axis=1)
+               object_data.shape
+   
+               final_data=pd.concat([data,object_data], axis=1)
+               
+               filename=r"normalize_function.pkl"
+               with open(filename, 'rb') as file:
+                   normalization_function = pickle.load(file)
+   
+               data = pd.DataFrame(normalization_function.transform(final_data))
+   
+               data.columns=final_data.columns
+               data=data.fillna(0)
+               
+               filename=r"model_final.pkl"
+               with open(filename, 'rb') as file:
+                   prediction = pickle.load(file)
+               probability=prediction.predict(data)
+               print(round(probability[0],2),"hjhjh")
+               ans=round(probability[0],2)
+               print(type(int(ans)),ans)
+               c1=(Gauge()
+                                   .add("", [("Probability", int(ans*100))], radius="80%")
+                                   .set_global_opts(title_opts=opts.TitleOpts(title="Probability"))
+                                   .set_series_opts(
+                                       axisline_opts=opts.AxisLineOpts(
+                                       linestyle_opts=opts.LineStyleOpts(
+                                       color=[[0.2, "#B9ABAA"],[0.8, "#F13626"], [1, "#F81D0B"]], width=20
+                                       ))))
+               st_pyecharts(c1)
 
 
     
