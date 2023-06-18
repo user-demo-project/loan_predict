@@ -360,8 +360,9 @@ if authentication_status:
             
             ans=round(probability[0],2)
             print(type(int(ans)),ans)
+            st.text("Probability: "+ans)
             c1=(Gauge()
-                                .add("", [("Probability", int(ans*100))],radius="80%")
+                                .add("", [(".", int(ans*100))],radius="80%")
                                 .set_global_opts(title_opts=opts.TitleOpts(title="Probability"))
                                 .set_series_opts(
                                     axisline_opts=opts.AxisLineOpts(
