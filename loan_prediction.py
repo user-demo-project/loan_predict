@@ -14,7 +14,7 @@ from PIL import Image
 print(pd.__version__,np.__version__)
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 
-st.set_page_config(page_title="Loan Default Prediction Dashboard", page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title="Loan Default Prediction Dashboard", page_icon=":bank:", layout="wide")
 st.markdown("""
 <style>
     #MainMenu, header, footer {visibility: hidden;}
