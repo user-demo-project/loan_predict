@@ -1,4 +1,8 @@
-.div[data-testid="stImage"]{
-border: black;
-    border-style: solid;
-    border-width: 2px;}
+iframe[title="streamlit_echarts.st_echarts"]{
+background-color: #c68a0f;
+    border-radius: 20px;
+    border-style: outset;
+    border-width: 2px;
+    border-color: #bfa04e;
+    margin-left: 25%;
+    width: 50%;}
