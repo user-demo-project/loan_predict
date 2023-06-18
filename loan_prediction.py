@@ -303,7 +303,7 @@ if authentication_status:
                st.text("Probability: "+str(ans))
                c1=(Gauge()
                                    .add("", [("Probability", int(ans*100))], radius="80%")
-                                   .set_global_opts(title_opts=opts.TitleOpts(title="Probability"))
+                                   .set_global_opts(title_opts=opts.TitleOpts(title="."))
                                    .set_series_opts(
                                        axisline_opts=opts.AxisLineOpts(
                                        linestyle_opts=opts.LineStyleOpts(
@@ -363,8 +363,8 @@ if authentication_status:
             print(type(int(ans)),ans)
             st.text("Probability: "+str(ans))
             c1=(Gauge()
-                                .add("", [(".", int(ans*100))],radius="80%")
-                                .set_global_opts(title_opts=opts.TitleOpts(title="Probability"))
+                                .add("", [("Probability", int(ans*100))],radius="80%")
+                                .set_global_opts(title_opts=opts.TitleOpts(title="."))
                                 .set_series_opts(
                                     axisline_opts=opts.AxisLineOpts(
                                     linestyle_opts=opts.LineStyleOpts(
