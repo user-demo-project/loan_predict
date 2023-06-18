@@ -17,7 +17,7 @@ print(pd.__version__,np.__version__)
 st.set_page_config(page_title="Loan Default Prediction Dashboard", page_icon=":bank:", layout="wide")
 st.markdown("""
 <style>
-    #MainMenu, header, footer {visibility: hidden;}
+   
 </style>
 """,unsafe_allow_html=True)
 st.markdown(f"""<style>
