@@ -361,7 +361,7 @@ if authentication_status:
             ans=round(probability[0],2)
             print(type(int(ans)),ans)
             c1=(Gauge()
-                                .add("", [("Probability", int(ans*100))], radius="80%")
+                                .add("", [("Probability", int(ans*100))], title_color="#fff", detail_color="#fff", radius="80%")
                                 .set_global_opts(title_opts=opts.TitleOpts(title="Probability"))
                                 .set_series_opts(
                                     axisline_opts=opts.AxisLineOpts(
