@@ -197,7 +197,7 @@ if authentication_status:
         with col312:
         
             st.write("EmploymentDurationCurrentEmployer")
-            st.text("MoreThan5Years,UpTo3Years,UpTo5Years,UpTo1Year,TrialPeriod,Retiree	Other")
+            st.text("MoreThan5Years,UpTo3Years,UpTo5Years,UpTo1Year,TrialPeriod,Retiree Other")
         
         col313,col314,col315=st.columns(3) 
         with col313:
