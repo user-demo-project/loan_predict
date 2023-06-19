@@ -250,6 +250,8 @@ if authentication_status:
         df_sample = pd.read_excel(r"Input (1).xlsx")
         with st.expander("See Sample Input File"):
             st.table(df_sample)
+            with open("Input (1).xlsx", 'rb') as my_file:
+                st.download_button(label = 'Download sample input file', data = my_file, file_name = "Input.xlsx", mime = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
         if st.button('Submit'):
             if uploaded_file is None:
                st.warning("Please upload file")
