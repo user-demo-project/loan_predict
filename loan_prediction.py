@@ -280,7 +280,7 @@ if authentication_status:
                tranformed_data=pd.DataFrame(transformed_data)
                tranformed_data.columns=features_cat_data
                object_data = pd.concat([tranformed_data,bool_data], axis=1)
-               object_data.shape
+               
    
                final_data=pd.concat([data,object_data], axis=1)
                
@@ -341,7 +341,7 @@ if authentication_status:
             tranformed_data=pd.DataFrame(transformed_data)
             tranformed_data.columns=features_cat_data
             object_data = pd.concat([tranformed_data,bool_data], axis=1)
-            object_data.shape
+            
 
             final_data=pd.concat([data,object_data], axis=1)
             
