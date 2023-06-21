@@ -83,7 +83,7 @@ if authentication_status == None:
 
 if authentication_status:
     print("done")
-    tab1, tab2 ,tab3= st.tabs(["📈 Data Summary ","📈 Data Insights ", "⚙️ Prediction"])
+    tab1, tab2 ,tab3, tab4= st.tabs(["📈 Data Summary ","📈 Data Insights ", "⚙️ Prediction","📲 Contact"])
     data = np.random.randn(10, 1)
 
     
@@ -374,6 +374,9 @@ if authentication_status:
                                     ))
                                 ))
             st_pyecharts(c1)
+      with tab4:
+         st.subheader("Help")
+         st.write ("If you need help, please contact us at hanni.kabe@gmail.com")
     
             
             
