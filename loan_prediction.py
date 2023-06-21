@@ -50,7 +50,7 @@ st.markdown(hide_table_row_index, unsafe_allow_html=True)
 
 # --- USER AUTHENTICATION ---
 names = ["test_user"]
-usernames = ["user@123"]
+usernames = ["test_app"]
 file_path = Path(__file__).parent / "hashed_pw.pkl"
 with file_path.open("rb") as file:
     hashed_passwords = pickle.load(file)
