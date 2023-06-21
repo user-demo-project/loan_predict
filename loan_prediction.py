@@ -374,9 +374,9 @@ if authentication_status:
                                     ))
                                 ))
             st_pyecharts(c1)
-   with tab4:
-         st.subheader("Help")
-         st.write ("If you need help, please contact us at hanni.kabe@gmail.com")
+	with tab4:
+        st.subheader("Help")
+        st.write ("If you need help, please contact us at hanni.kabe@gmail.com")
     
             
             
