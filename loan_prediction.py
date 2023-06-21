@@ -244,6 +244,8 @@ if authentication_status:
                 st.image(image_33, width =400)
             
     with tab3:
+    
+        
         
         
         uploaded_file = st.file_uploader("Upload file for prediction")
@@ -374,7 +376,12 @@ if authentication_status:
                                     ))
                                 ))
             st_pyecharts(c1)
-	with tab4:
+	
+    
+    
+    
+    with tab4:
+        
         st.subheader("Help")
         st.write ("If you need help, please contact us at hanni.kabe@gmail.com")
     
