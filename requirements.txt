@@ -2,7 +2,7 @@ pandas==2.0.1
 numpy==1.23.5
 streamlit
 streamlit_authenticator
-scikit-learn
+scikit-learn==1.2.2
 xgboost
 openpyxl
 streamlit_echarts
